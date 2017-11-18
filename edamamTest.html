@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edamam Test</title>
+</head>
+<body>
+	<h1>Edamam Test!</h1>
+	<form id="foodQuery">
+		<label for="food">Add a food!</label><br>
+		<input type="text" id="foodInput"><br>
+		<input type="submit" id="searchFood" value="I am so Hungry">
+	</form>
+	<div id="dataDump">
+	</div>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			$("#searchFood").on("click", function() {
+				event.preventDefault();
+
+				var foodSearch = $("#foodInput").val().trim();
+				console.log(foodSearch);
+				var queryURL = "https://api.edamam.com/search?app_id=6891053a&app_key=850e0cd22232d2c3a43600cea1277a5f&q=" + foodSearch + "&from=0&to=10"
+
+				$.ajax({
+					url: queryURL,
+					method: "GET"
+				}).done(function(response) {
+					
+					console.log(response);
+				})
+			}); //ends on click function
+
+		</script>
+	</body>
+	</html>
