@@ -1,0 +1,29 @@
+#topbar{
+	background-color: black;
+	color: white;
+	display:flex;
+	justify-content: flex-end;
+	padding: 5px 10px;
+}
+
+#masthead{
+	background-color: #E2FD9A;
+}
+
+#logo{
+	background: url("https://image.freepik.com/free-icon/twitter-logo_318-40459.jpg");
+}
+
+#bottom{
+	background-color: black;
+}
+
+#selection{
+	display: flex;
+	justify-content: center;
+}
+
+#recipe{
+	display: flex;
+	justify-content: center;
+}
