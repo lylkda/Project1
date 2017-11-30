@@ -108,4 +108,4 @@ $("#searchFood").on("click", function() {
                         })
                     });                 
                 })
-            }); //ends submit button on cli
+            }); //ends submit button on click
