@@ -1,55 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
 <head>
-	<title>WHAT THE FUCK SHOULD I COOK TONIGHT?</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>WTFSIC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/reset.css"  />
+  <link rel="stylesheet" type="text/css" href="css/layout.css"  />
+  <link rel="stylesheet" type="text/css" href="css/supersized.css"  />
+  <link rel="stylesheet" type="text/css" href="css/menu.css"  />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css"  />
+  <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Viga" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css"  />
+  <link rel="stylesheet" type="text/css" href="css/responsive.css"  />
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 </head>
 <body>
-	<div id="topbar"><i class="fa fa-envelope-o" aria-hidden="true"> Email Us</i>
-	</div>
-	<div id="masthead">
-		<div class="container">
-			<div id="logo"><a href="#" id="logo">Space</a>
-			</div>
-		</div>
-	</div>
 
-	<div class="container">
-		<div class="card">
-			<div class="card-header bg-primary">Options
-			</div>
-			<div class="card-body bg-light">
-				<div id="options">
-					<form>
-						<div class="form-group">
-							<label for="type-input">YOU'RE FUCKING ALLERGIC TO</label>
-							<input class="form-control" id="type-input" type="text">
-						</div>
-						<div class="form-group">
-							<label for="query-input">IS THERE SOMETHING YOU FUCKING WANT?</label>
-							<input class="form-control" id="query-input" type="text" placeholder="Breakfast, Dessert, Steak, etc">
-						</div>
-						<div class="form-group">
-							<label for="ingr-input">HOW MANY FUCKING THINGS DO YOU WANT TO BUY?</label>
-							<input class="form-control" id="ingr-input" type="text">
-						</div>
-						<button class="btn btn-primary" id="searchFood" type="submit">Submit</button>
-					</form>
-				</div>
-			</div>
-		</div>
+  <!--Logo Start-->
+  <section id="logo">
+   <h1>WTF Should I Cook?</h1></a>
+ </section>
+ <!--Logo End-->
 
-		<div class="card mt-5">
-			<div class="card-header bg-primary">Recipes</div>
-			<div class="card-body bg-light" id="recipe">
-				<div id="ingredients">
-			</div>
-		</div>
+ <!--Intro Text Start-->
+ <section class="intro-text">
+   <h2>DON'T KNOW WHAT THE FUCK TO COOK?! </h2>
+   <h1>WE FUCKING GOT YOU</h1>
+ </section>
+ <!--Intro Text End-->
 
-	</div> <!-- End container -->
-</nav>
+ <!--Container Start-->
+ <section>
+  <div class="container"> 
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center white-text"><i class="material-icons" id="icon-size">error_outline</i></h2>
+          <h3 class="center">Allergies?</h3>
+          <p class="light">Got a fucking allergy? Then choose one from the fucking box below</p>
+          <div class="row">
+            <div id="input2" class="col s12">
+              What fucking allergies?:
+              <label>Allergies</label>
+              <select class="browser-default">
+                <option value="" disabled selected id="choose">Choose your option</option>
+                <option value="peanut-free">Peanut Free</option>
+                <option value="dairy-free">Dairy Free</option>
+                <option value="gluten-free">Gluten Free</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="shellfish-free">Shellfish Free</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center white-text"><i class="material-icons" id="icon-size">free_breakfast</i></h2>
+          <h3 class="center">Ingredients</h3>
+          <p class="light">Don't want to cook some fancy shmancy bullshit? Then tell us how many fucking ingredients you want to use.</p>
+          <div class="row">
+            <div id="input2" class="col s12">
+              How fucking many?:
+              <div class="input-field inline">
+                <input id="ingr-input" type="text" class="">
+                <label for="ingredients">Number</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center white-text"><i class="material-icons" id="icon-size">insert_emoticon</i></h2>
+          <h3 class="center">Specific Ingredients?</h3>
+          <p class="light">What's that? You got a specific fucking ingredient you want to use? Well type it in the fucking box already.</p>
+          <div class="row">
+            <div id="input2" class="col s12">
+              What fucking ingredient?:
+              <div class="input-field inline">
+                <input id="query-input" type="text" class="">
+                <label for="query-input">"Chicken"</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row center">
+        <input type="submit" id="searchFood" class="waves-effect waves-light red btn" value="Get My Fucking Recipe">
+      </div>
+    </div>
+  </div>
+
+  <div class="row center">
+    <div class="card">
+      <div class="card-image">
+        <img id="imagecenter" src="What Do You Want.gif">
+      </div>
+      <div class="card-content">
+        <h3>Still can't decide what the fuck to make? Maybe you just dont give a fuck? Here is what some other fucking dude liked a lot. </h3>
+        <a id="suprise" class="waves-effect waves-light red btn">SOME FUCKING STRANGER'S RECIPE</a>
+        <div class="container" id="recipe">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Container End-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/supersized.3.2.7.js"></script>
+<script type="text/javascript" src="js/supersized.shutter.js"></script>
+<script type="text/javascript" src="js/superized-custom.js"></script>
+<script type="text/javascript" src="js/logic.js"></script>
 </body>
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-<script src="logic.js"></script>
+</html>
