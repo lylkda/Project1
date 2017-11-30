@@ -1,0 +1,320 @@
+/* TABLE OF CONTENT
+	1. LOGO
+	2. INTRO
+	3. DROP CAP
+	4.FOOTER MENU
+	5.FULL BG
+	6.PROMO TEXT
+	7.FOOD MENU
+	8.HOCAHOLA
+	9.DRAGGABLE GENERAL STYLE
+	10.CONTACT FORM
+	11.SOCIAL MENU
+	----------------------------------------------------------------------------------------------------*/
+	body {
+		color: #EBEBEB;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 13px;
+		line-height: 22px;
+	}
+	* {
+		margin:0;
+		padding:0;
+	}
+	p, ul, ol, dl, table, fieldset, blockquote, pre, code {
+		color:#666;
+	}
+	p {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 15px;
+		line-height: 24px;
+	}
+	iframe {
+		width:100%;
+		border:none;
+	}
+	a {
+		outline:none;
+		text-decoration:none;
+		font-family: 'Viga', sans-serif;
+	}
+
+	.dump a:hover {
+		outline: 0;
+		COLOR: aquamarine;
+	}
+	h1, h2, h3, h4, h5 {
+		color: #fff;
+		font-family: 'Viga', sans-serif;
+		font-weight: 500;
+		line-height: 100%;
+		margin-bottom: 10px;
+	}
+	h1 {
+		font-size:30px;
+		margin-bottom:30px;
+	}
+	h2 {
+		font-size: 22px;
+		margin-bottom:30px;
+	}
+	h3 {
+		font-size: 19px;
+		margin-bottom:30px;
+	}
+	h4 {
+		font-size: 18px;
+	}
+	h5 {
+		font-size: 12px;
+	}
+	h6 {
+		font-size: 10px;
+	}
+
+	#container img{
+		max-width:100%;
+		height:auto;
+	}
+
+	.clear {
+		clear:both;
+	}
+	.thumb-img {
+		float: left;
+		margin: 0px 20px 0px 0px;
+	}
+	.description {
+		display:table;
+	}
+
+	.vspace {
+		margin:15px 0px;
+		clear: both;
+	}
+
+	blockquote {
+		background-color: #F2F2F2;
+		border: 1px solid #E4E4E4;
+		border-bottom:6px solid #E4E4E4;
+		padding: 25px;
+		font-style:italic;
+		margin-bottom:30px;
+	}
+	.alignright {
+		float: right;
+		margin: 3px 0 0px 10px;
+		width:auto;
+	}
+	.alignleft {
+		float: left;
+		margin:0px 20px 0px 0px;
+		width:auto;
+	}
+
+/* 1. LOGO
+------------------------------------------------------*/
+#logo {
+	text-align:center;
+}
+
+#logo h1{
+	font-family: 'Leckerli One', cursive;
+	font-weight: bolder;
+	line-height: 110%;
+	text-shadow: 2px 2px 4px #000000;
+	font-size:150px;
+	color:#fff;
+	margin-bottom:5px;
+}
+
+#logo h4{
+	font-weight: 400;
+	text-shadow: 1px 1px 1px #000000;
+	letter-spacing:2px;
+	color:#fff;
+}
+
+/* 2. INTRO TEXT
+------------------------------------------------------*/
+.intro-text{
+	text-align:center;
+	text-shadow:1px 0 4px #333;
+	margin:50px 0px;
+}
+
+.intro-text h1{
+	font-size:6em;
+	color:#fff;
+	font-weight:700;
+}
+
+.intro-text h2{
+	font-size:4em;
+	color:#fff;
+	font-weight:700;
+	margin-bottom:20px;
+}
+
+.intro-text h3 {
+	font-size:2em;
+	color:#fff;
+	font-weight:700;
+	margin-bottom:16px;
+}
+
+/* 5. FULL BG
+------------------------------------------------------*/
+#full-screen-background-image {
+	height: auto;
+	left: 0;
+	min-height: 100%;
+	min-width: 1024px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -999;
+}
+
+nav ul a,
+nav .brand-logo {
+	color: #444;
+	font-family: 'Permanent Marker', cursive;
+}
+
+/* Input Fields
+------------------------------------------------------*/
+.browser-default{
+	color: black;
+}
+
+option {
+	color: black;
+}
+.light{
+	color: #fff;
+	font-weight: bolder;
+}
+
+#input2 {
+	color: #fff;
+	font-weight: bolder;
+}
+
+p {
+	line-height: 2rem;
+}
+
+.button-collapse {
+	color: #26a69a;
+}
+
+.parallax-container {
+	min-height: 380px;
+	line-height: 0;
+	height: auto;
+	color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+	width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+	.parallax-container .section {
+		position: absolute;
+		top: 40%;
+	}
+	#index-banner .section {
+		top: 10%;
+	}
+}
+
+@media only screen and (max-width : 600px) {
+	#index-banner .section {
+		top: 0;
+	}
+}
+#icon-size{
+	font-size: 75px;
+}
+.icon-block {
+	padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+footer.page-footer {
+	margin: 0;
+}
+
+
+/* Card Content
+------------------------------------------------------*/
+.card {
+	margin: 0 auto;
+	width: 100%;
+}
+
+#imagecenter {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.card-content, .card {
+	color:#fff !important;
+	font-family: 'Viga', sans-serif;
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+#suprise {
+	background-color: red !important;
+}
+#suprise:hover {
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%, 80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%, 50%, 70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%, 60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+body {
+	background-color: grey; 
+}
+
+a{
+	color: white;
+}
+
+.dump, .smallerDump{
+	padding: 15px 25px;
+	background-color: black;
+	opacity: .85;;
+}
+
+#recipe{
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.smallerDump{
+	display: flex;
+	justify-content: space-between;
+}

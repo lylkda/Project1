@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>USDA Test</title>
+</head>
+<body>
+	<h1>USDA TESTING</h1>
+	<form id="ingQuery">
+		<label for="ingredient">Learn more about an ingredient!</label><br>
+		<input type="text" id="ingInput"><br>
+		<input type="submit" id="searchIngredient" value="TELL ME ABOUT THE THING">
+	</form>
+
+	<div id="nutrientDump">
+	</div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("#searchIngredient").on("click", function() {
+			event.preventDefault();
+			var ingSearch = $("#ingInput").val().trim();
+			console.log(ingSearch);
+  			// ajax for pulling the national database number (ndbno)
+  			var NBDqueryURL = "https://api.nal.usda.gov/ndb/search/?format=json&q=" + ingSearch + "&ds=Standard%20Reference&sort=r&max=25&offset=0&api_key=cqWGlycVTfyAl1Z5nveyUUNpbpouRinLAJAbG8Sw"
+  			$.ajax({
+  				url: NBDqueryURL,
+  				method: "GET"
+  			}).done(function(response) {
+  				var results = response.list.item;
+					// the ndbno
+					var firstNBDnum = results[1].ndbno;
+					console.log(firstNBDnum);
+					// ajax for using the ndbno to get nutrient data for fats, carbs, calories, and sugar
+					var compQueryURL = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=cqWGlycVTfyAl1Z5nveyUUNpbpouRinLAJAbG8Sw&nutrients=204&nutrients=205&nutrients=208&nutrients=269&ndbno=" + firstNBDnum
+					$.ajax({
+						url: compQueryURL,
+						method: "GET"
+					}).done(function(response) {
+						console.log(response);
+						var ingWeight = response.report.foods[0].measure
+						var nutrientResults = response.report.foods[0].nutrients
+						console.log(nutrientResults);
+						//always goes in order of: calories, sugars, fats, carbs
+						//caloric data 
+						var calTotal = nutrientResults[0].value;
+						var calDisplay = $("<p>").html("Calories: " + calTotal + "kcal per " + ingWeight + " of " + ingSearch);
+						//sugar data
+						var sugarTotal = nutrientResults[1].value;
+						var sugarDisplay = $("<p>").html("Sugars: " + sugarTotal + "g per " + ingWeight + " of " + ingSearch);
+						//fats data
+						var fatTotal = nutrientResults[2].value;
+						var fatDisplay = $("<p>").html("Fats: " + fatTotal + "g per " + ingWeight + " of " + ingSearch);
+						//carbs data
+						var carbsTotal = nutrientResults[3].value;
+						var carbDisplay = $("<p>").html("Carbohydrates: " + carbsTotal + "g per" + ingWeight + " of " + ingSearch);
+						// display this nutrient info!
+						var nutrientDiv = $("<div id='myNutrients' style='border-style:double;'>");
+						nutrientDiv.append(carbDisplay);
+						nutrientDiv.append(fatDisplay);
+						nutrientDiv.append(sugarDisplay);
+						nutrientDiv.append(calDisplay);
+						$("#nutrientDump").empty();
+						$("#nutrientDump").append(nutrientDiv);
+					}) //ends compQuery ajax call
+				}); //ends NDBquery ajax call
+  		});	//ends on click for searchIngredient				
+			</script>
+
+		</body>
+		</html>
