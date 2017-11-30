@@ -5,12 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 <title>WTFSIC</title>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/reset.css"  />
 <link rel="stylesheet" type="text/css" href="css/layout.css"  />
 <link rel="stylesheet" type="text/css" href="css/supersized.css"  />
-<link rel="stylesheet" type="text/css" href="css/supersized.shutter.css" />
 <link rel="stylesheet" type="text/css" href="css/menu.css"  />
 <link rel="stylesheet" type="text/css" href="css/font-awesome.css"  />
 <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Viga" rel="stylesheet">
@@ -18,8 +16,6 @@
 <link rel="stylesheet" type="text/css" href="css/responsive.css"  />
 </head>
 <body>
-
-
 
 <!--Logo Start-->
 <section id="logo">
@@ -42,14 +38,19 @@
       <div class="icon-block">
         <h2 class="center white-text"><i class="material-icons" id="icon-size">error_outline</i></h2>
         <h3 class="center">Allergies?</h3>
-        <p class="light">Got a fucking allergy? Then type it in the fucking box below.</p>
+        <p class="light">Got a fucking allergy? Then choose one from the fucking box below</p>
         <div class="row">
           <div id="input2" class="col s12">
             What fucking allergies?:
-            <div class="input-field inline">
-              <input id="type-input" type="text" class="">
-              <label for="type-input">Allergy</label>
-            </div>
+            <label>Allergies</label>
+            <select class="browser-default">
+              <option id="selectAllergy" value="" disabled selected id="choose">Choose your option</option>
+              <option value="peanut-free">Peanut Free</option>
+              <option value="dairy-free">Dairy Free</option>
+              <option value="gluten-free">Gluten Free</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="shellfish-free">Shellfish Free</option>
+            </select>
           </div>
         </div>
       </div>
@@ -75,7 +76,7 @@
     <div class="col s12 m4">
       <div class="icon-block">
         <h2 class="center white-text"><i class="material-icons" id="icon-size">insert_emoticon</i></h2>
-        <h3 class="center">Easy to work with</h3>
+        <h3 class="center">Specific Ingredients?</h3>
         <p class="light">What's that? You got a specific fucking ingredient you want to use? Well type it in the fucking box already.</p>
         <div class="row">
           <div id="input2" class="col s12">
@@ -90,7 +91,7 @@
     </div>
         
     <div class="row center">
-      <a href="#" id="download-button searchFood" class="btn-large waves-effect waves-light red lighten-1 recipe">Find my recipe</a>
+      <input type="submit" id="searchFood" class="waves-effect waves-light red btn" value="Get My Fucking Recipe">
     </div>
   </div>
 </div>
@@ -104,21 +105,20 @@
         <h3>Still can't decide what the fuck to make? Maybe you just dont give a fuck? Either way we still fucking got you </h3>
       </div>
       <div class="card-action">
-        <a id="suprise" class="waves-effect waves-light btn">RANDOM FUCKING RECIPE</a>
+        <a id="suprise" class="waves-effect waves-light red btn">RANDOM FUCKING RECIPE</a>
+        <div id="recipe"></div>
       </div>
     </div>
   </div>
 </section>
 <!--Container End-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.js"></script>
-  <script type="text/javascript" src="js/init.js"></script>
-
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery.easing.min.js"></script>		
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="js/supersized.3.2.7.js"></script>
-<script type="text/javascript" src="js/supersized.shutter.js"></script>
 <script type="text/javascript" src="js/superized-custom.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/logic.js"></script>
 </body>
 </html>
