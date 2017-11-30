@@ -39,7 +39,7 @@ a {
 	font-family: 'Viga', sans-serif;
 }
 h1, h2, h3, h4, h5 {
-	color: #333;
+	color: #fff;
 	font-family: 'Viga', sans-serif;
 	font-weight: 500;
 	line-height: 100%;
@@ -177,8 +177,9 @@ nav .brand-logo {
   font-family: 'Permanent Marker', cursive;
 }
 
-#startbutton {
-  color: black !important;
+.light{
+	color: #fff;
+	font-weight: bolder;
 }
 
 p {
@@ -231,9 +232,16 @@ h1{
 }
 /* Card Content
 ------------------------------------------------------*/
-.container .row {
+.card {
   margin: 0 auto;
+  width: 100%;
 }
+
+#imagecenter {
+    width: 50%;
+    margin: 0 auto;
+}
+
 .card-content, .card {
   color: black !important;
   background-color: transparent !important;
@@ -268,4 +276,10 @@ h1{
 }
 body {
 	background-color: grey; 
+}
+
+/*Icons
+*/
+#icon-size{
+	font-size: 75px;
 }
