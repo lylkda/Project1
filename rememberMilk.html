@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Remember The Milk API Test</title>
+	<script src="./myMd5.js" type="text/javascript"></script>
 </head>
 <body>
 	<h1>Make a tiny list for the glory of testing!</h1>
@@ -12,6 +13,35 @@
 		<br>
 		<input type="submit" id="addItem" value="PUSH MY THANG!">
 	</form>
+
+	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var api_key = '33cae458bd9a42eab14866cb61044514';
+		var api_secret = '68d74b379d4c0318';
+
+
+		function hash(string){
+			return md5(string)
+		}
+
+		var calculated = api_secret + "api_key" + api_key + "permsdelete";
+
+		var frobHash = hash(calculated)
+
+		var frobURL = "http://www.rememberthemilk.com/services/auth/?api_key=" + api_key + "&perms=delete&api_sig=" + frobHash
+
+		$.ajax({
+			type: "POST",
+			url: frobURL,
+			success: function(response){
+				console.log(response);
+			},
+			dataType: 'html'
+		});
+
+	</script>
 
 </body>
 </html>
