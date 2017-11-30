@@ -43,7 +43,7 @@ $("#searchFood").on("click", function() {
             $("#recipe").html("");
             var foodSearch = $("#query-input").val().trim();
             var ingr = $("#ingr-input").val().trim();
-            var allergyVal = $("#type-input").val().trim();
+            var allergyVal = $("#choose").val().trim();
             var ingrNum = ""
             var allergy = ""
 

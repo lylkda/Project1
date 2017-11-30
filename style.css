@@ -283,3 +283,11 @@ body {
 #icon-size{
 	font-size: 75px;
 }
+
+label{
+color: black;
+}
+
+#choose{
+	color: black;
+}
