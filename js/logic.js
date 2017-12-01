@@ -67,7 +67,7 @@ $("#searchFood").on("click", function() {
                     recipeDiv.prepend(ingredientDetails);
                     recipeDiv.prepend(displayImg);
                     recipeDiv.prepend(titleP);
-                    var save=$('<input/>').attr({ type: 'button', name:'btn1', id:'saveItem', value:'FIRE AF'});
+                    var save=$('<input/>').attr({ type: 'button', name:'btn1', id:'saveItem', value:'OTHER FUCKERS GET TO LOOK AT THIS'});
                     save.addClass('waves-effect waves-light red btn');
                     recipeDiv.append(save);
                     $("#recipe").empty();
